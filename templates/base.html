@@ -17,7 +17,15 @@
   <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-danger mb-4">
       <a class="navbar-brand" href="{% url 'home' %}">Reddit v2.0</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse"
+      
+	{% if user.is_authenticated %}
+          <ul class="navbat-nav mr-auto">
+            <li class="nav-item"><a href="{% url 'post_new' %}">+ New</a></li>
+          </ul>
+       {% endif %}	
+
+
+	<button class="navbar-toggler" type="button" data-toggle="collapse"
       data-target="#navbarCollapse" aria-controls="navbarCollapse"
       aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
