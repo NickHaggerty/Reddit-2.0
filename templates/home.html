@@ -2,16 +2,13 @@
 
 {% block title %}Home{% endblock title %}
 
-
-
 {% block content %}
-{% if user.is_authenticated %}
-  Hello {{ user.username }}
-  <p><a href="{% url 'logout' %}">Log Out</a></p>
-{% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">Log In</a> |
-  <a href="{% url 'signup' %}">Sign Up</a>
-{% endif %}
+<div class = "jumbotron">
+  <h1 class="display-4">Reddit app</h1>
+  <p class="lead">A Reddit website built with Django.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="{% url 'post_list' %}"
+    role="button">View All Posts</a>
+  </p>
+</div>
 {% endblock content %}
- 
