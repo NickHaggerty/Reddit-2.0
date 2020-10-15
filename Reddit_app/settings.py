@@ -44,7 +44,11 @@ INSTALLED_APPS = [
     
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
+    'posts.apps.PostsConfig',
 ]
+
+TIME_ZONE = 'American/Denver'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
