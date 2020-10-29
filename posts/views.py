@@ -45,6 +45,8 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     fields = ('title', 'image', 'body')
     login_url = 'login'
 
+    
+
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
