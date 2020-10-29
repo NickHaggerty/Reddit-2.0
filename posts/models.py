@@ -6,6 +6,7 @@ from django.urls import reverse
 class Post(models.Model):
     title = models.CharField(max_length=255)
     body = models.TextField()
+    image = models.ImageField(upload_to='images')
     date = models.DateTimeField(auto_now_add = True)
     author = models.ForeignKey(
         get_user_model(),
@@ -17,6 +18,12 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('post_detail', args=[str(self.id)])
+
+
+
+
+
+    
 
 class Comment(models.Model):
     post = models.ForeignKey(
