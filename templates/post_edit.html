@@ -6,9 +6,10 @@
 {% csrf_token %}
   {{ form.as_p }}
 
-
+{% if post.image %}
   <h6>Current Photo :</h6>
   <img src="{{ post.image.url}}" alt="connect" style="max-height:300px">
+{% endif %}
 
 <br><br>
  

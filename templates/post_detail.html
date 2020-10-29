@@ -5,6 +5,9 @@
     <h2>{{ object.title }}</h2>
      <p>by {{ object.author }} | {{ object.date }}</p>
      <p>{{ object.body }}</p>
+     {% if post.image %}
+     <img src="{{ post.image.url}}" alt="connect" style="max-height:300px">
+     {% endif %}
    </div>
    <p><a href="{% url 'post_edit' post.pk %}">Edit</a> |
      <a href="{% url 'post_delete' post.pk %}">Delete</a></p>
