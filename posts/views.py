@@ -19,9 +19,14 @@ class PostDetailView(LoginRequiredMixin, DetailView):
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Post
-    fields = ('title', 'image', 'body',)
+    fields = ('title', 'body',  'image')
     template_name = 'post_edit.html'
     login_url = 'login'
+
+    
+
+        
+
 
     def test_func(self):
         obj = self.get_object()
@@ -42,7 +47,7 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     template_name = 'post_new.html'
-    fields = ('title', 'image', 'body')
+    fields = ('title','body', 'image')
     login_url = 'login'
 
     
