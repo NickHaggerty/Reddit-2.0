@@ -1,0 +1,1 @@
+The main app of the website, holds the settings and is basically main class. 

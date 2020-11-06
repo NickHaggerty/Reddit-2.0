@@ -1,0 +1,1 @@
+Hold tests and is the wire frame of the application itself.

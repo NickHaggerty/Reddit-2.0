@@ -1,0 +1,1 @@
+The html folder of the website, used to make the user seen side of the website. 

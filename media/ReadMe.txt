@@ -1,0 +1,1 @@
+This folder is for storing images posted to the website itself. 

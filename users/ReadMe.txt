@@ -1,0 +1,1 @@
+Controls and keeps data for each user, used for user auth, and posting data from the user. 
