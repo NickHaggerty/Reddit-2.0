@@ -5,7 +5,7 @@ from django.contrib.auth.mixins import (
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from django.urls import reverse_lazy
-from .models import Post
+from .models import Post, Comment
 
 class PostListView(LoginRequiredMixin, ListView):
     model = Post
@@ -22,11 +22,6 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     fields = ('title', 'body',  'image')
     template_name = 'post_edit.html'
     login_url = 'login'
-
-    
-
-        
-
 
     def test_func(self):
         obj = self.get_object()
@@ -55,3 +50,11 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+
+
+class PostCommentView(LoginRequiredMixin, CreateView):
+    model = Comment
+    template_name = 'add_comment.html'
+    fields = ('comment',)
+    login_url = 'login'

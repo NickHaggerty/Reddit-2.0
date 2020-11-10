@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'posts.apps.PostsConfig',
 ]
 
-TIME_ZONE = 'American/Denver'
+TIME_ZONE = 'American/LosAngeles'
 
 
 MIDDLEWARE = [
