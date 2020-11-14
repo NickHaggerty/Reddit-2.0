@@ -9,6 +9,7 @@ verify_ssl = true
 django = "==2.0.1"
 django-crispy-forms = "==1.8.1"
 pillow = "*"
+gunicorn = "==19.9.0"
 
 [requires]
 python_version = "3.8"
