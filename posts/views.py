@@ -56,11 +56,11 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 class PostCommentView(LoginRequiredMixin, CreateView):
     model = Comment
     template_name = 'add_comment.html'
-    fields = ('comment', 'author',)
+    fields = ('comment',)
     login_url = 'login'
 
     def form_valid(self, form):
-        form.instance.post_id = self.kwargs['pk']
+        form.instance.post_id = self.kwargs['fk']
         return super().form_valid(form)
 
 
