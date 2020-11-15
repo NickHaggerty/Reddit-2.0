@@ -29,7 +29,7 @@
  	No Comments Yet... <a href="#">  
 	<br/>
         Add One+</a>
-	{% endif %}
+	{% else %}
 
 
 	{% for comment in post.comments.all %}
@@ -38,6 +38,9 @@
            {{ comment }}
 	</p>
       {% endfor %}
+<br/>
+<a href="">Add Comment+</a>
+{% endif %}
     </div>
    </div>
    <br />
