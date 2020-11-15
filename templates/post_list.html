@@ -25,6 +25,8 @@
     <div class = "card-footer">
       {% if not post.comments.all %}
  	No Comments Yet... <a href="add_comment"> Add One</a>
+	{% endif %}
+
 
 	{% for comment in post.comments.all %}
 	<p>
