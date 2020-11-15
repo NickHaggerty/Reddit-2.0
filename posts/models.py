@@ -31,7 +31,7 @@ class Comment(models.Model):
         on_delete = models.CASCADE,
         related_name='comments',
         )
-    comment = models.CharField(max_length = 140)
+    comment = models.TextField()
     author = models.ForeignKey(
         get_user_model(),
         on_delete=models.CASCADE,
