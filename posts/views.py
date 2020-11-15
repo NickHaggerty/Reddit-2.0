@@ -58,3 +58,4 @@ class PostCommentView(LoginRequiredMixin, CreateView):
     template_name = 'add_comment.html'
     fields = ('comment',)
     login_url = 'login'
+    success_url = reverse_lazy('home')
