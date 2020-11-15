@@ -23,7 +23,10 @@
       <a href = "{% url 'post_delete' post.pk %}">Delete</a>
     </div>
     <div class = "card-footer">
-      {% for comment in post.comments.all %}
+      {% if not post.comments.all %}
+ 	No Comments Yet... <a href="add_comment"> Add One</a>
+
+	{% for comment in post.comments.all %}
 	<p>
           <span class="font-weight-bold">{{ comment.author }} &middot;</span>
            {{ comment }}
