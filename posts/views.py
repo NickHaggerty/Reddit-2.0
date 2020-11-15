@@ -7,6 +7,21 @@ from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from django.urls import reverse_lazy
 from .models import Post, Comment
 
+
+class PostCommentView(LoginRequiredMixin, CreateView):
+    model = Comment
+    template_name = 'add_comment.html'
+    fields = ('comment',)
+    login_url = 'login'
+
+
+
+    def form_valid(self, form):
+        form.instance.Post_id = self.kwargs['pk']
+        return super().form_valid(form)
+
+
+
 class PostListView(LoginRequiredMixin, ListView):
     model = Post
     template_name = 'post_list.html'
@@ -53,17 +68,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
 
 
-class PostCommentView(LoginRequiredMixin, CreateView):
-    model = Comment
-    template_name = 'add_comment.html'
-    fields = ('comment',)
-    login_url = 'login'
 
-
-
-    def form_valid(self, form):
-        form.instance.Post_id = self.kwargs['pk']
-        return super().form_valid(form)
 
 
     
