@@ -26,7 +26,7 @@
       
 
 {% if not post.comments.all %}
- 	No Comments Yet... <a href="#">  
+ 	No Comments Yet... <a href="{% url 'add_comment' post.pk %}">  
 	<br/>
         Add One+</a>
 	{% else %}
@@ -39,7 +39,7 @@
 	</p>
       {% endfor %}
 <br/>
-<a href="">Add Comment+</a>
+<a href="{% url 'add_comment' post.pk %}">Add Comment+</a>
 {% endif %}
     </div>
    </div>
