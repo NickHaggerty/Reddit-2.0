@@ -58,6 +58,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     template_name = 'post_new.html'
     fields = ('title','body', 'image')
+    success_url = reverse_lazy('post_list')
     login_url = 'login'
 
     
